@@ -1,0 +1,6 @@
+feature/add-user-onboarding
+fix/login-redirect-loop
+docs/update-api-setup
+refactor/simplify-tool-parser
+chore/update-deps-2026-01-28
+hotfix/critical-payment-bug
