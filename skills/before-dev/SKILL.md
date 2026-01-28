@@ -1,6 +1,6 @@
 ---
 name: before-dev
-description: Ensure development starts from the latest main/master, create a new branch (or worktree when requested), then begin coding. Use when the user asks for new changes or a new feature, says "start a new task", "new requirement", "new changes", or in Chinese "现在帮我开发一个新的需求" / "现在要进行新的改动"; also trigger when the user mentions worktree or parallel development.
+description: Ensure development starts from the latest main/master, create a new branch (or worktree when requested), then begin coding. Trigger only when the user explicitly requests a new change/feature/requirement or a "new task" (not "task" alone), or says in Chinese "现在帮我开发一个新的需求" / "现在要进行新的改动" / "新功能" / "新的任务"; also trigger when the user mentions worktree or parallel development.
 ---
 
 # Before Dev
@@ -14,6 +14,7 @@ Enforce a pre-dev workflow: sync from the latest default branch, create a new br
 1) Detect intent
 - If user mentions worktree or parallel development, create a worktree first.
 - Otherwise, use the current repo workspace.
+- Only treat it as a trigger when the user clearly indicates a new change/feature/requirement or says "new task"; do not trigger on "task" alone or on ongoing task updates.
 
 2) Confirm base branch
 - Prefer `origin/main`; if missing, use `origin/master`.
